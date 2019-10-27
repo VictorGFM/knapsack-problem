@@ -36,24 +36,15 @@ int main(int argc, char* argv[]) {
     //Termina leitura e fecha o arquivo.
     arquivoEntrada.close();
 
-    clock_t tempoInicial;
-    clock_t tempoFinal;
-
-    tempoInicial = clock();
     //Realiza chamada a funcao de viagem com repeticao de ilha e imprime resultado.
     int pontuacaoComRepeticao = 0, qtdDiasComRepeticao = 0;
     viagemComRepeticaoIlha(ilhas, qtdIlhas, custoMaximo, &pontuacaoComRepeticao, &qtdDiasComRepeticao);
     cout << pontuacaoComRepeticao << " " << qtdDiasComRepeticao << endl;
-    tempoFinal = clock();
-    cout << "Tempo Com Repeticao: " << (tempoFinal- tempoInicial) * 1000.0 / CLOCKS_PER_SEC << endl;
 
-    tempoInicial = clock();
     //Realiza chamada a funcao de viagem sem repeticao de ilha e imprime resultado.
     int pontuacaoSemRepeticao = 0, qtdDiasSemRepeticao = 0;
     viagemSemRepeticaoIlha(ilhas, qtdIlhas, custoMaximo, &pontuacaoSemRepeticao, &qtdDiasSemRepeticao);
     cout << pontuacaoSemRepeticao << " " << qtdDiasSemRepeticao << endl;
-    tempoFinal = clock();
-    cout << "Tempo Sem Repeticao: " << (tempoFinal- tempoInicial) * 1000.0 / CLOCKS_PER_SEC << endl;
 
     return 1;
 }
