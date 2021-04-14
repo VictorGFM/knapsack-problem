@@ -1,4 +1,4 @@
-ALL = tp2
+ALL = knapsack-problem
 SRC = $(wildcard *.cpp)
 OBJ = $(patsubst %.cpp, %.o, $(wildcard *.cpp))
 
